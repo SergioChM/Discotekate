@@ -1,0 +1,22 @@
+﻿@model List<WebApplication1.Models.Empresa>
+
+@foreach (var empresa in Model)
+{
+    <div class="container">
+        <section>
+            <div class="col-xs-10" id="back-opacity">
+                <!-- COLUMNA DE 10 GRILLAS Y CON OPACIDAD -->
+                <div class="col-xs-3">
+                    <!-- COLUMNA DE 3 GRILLAS -->
+                    <a href=""><img src="@empresa.logo" alt="" width="250" height="200"></a> <!-- IMAGEN -->
+                    <a href=""><h1 align="center" class="titulo_tab">@empresa.nombre</h1></a> <!-- TITULO -->
+
+                    <div>
+                        <h3 class="texto_tab"> @empresa.descripcion</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+}

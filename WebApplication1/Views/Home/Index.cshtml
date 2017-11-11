@@ -1,0 +1,42 @@
+﻿@{ 
+    var model = (List<WebApplication1.Models.Empresa>)ViewBag.ListadoEmpresa;
+}
+
+
+<head>
+   
+
+    <title>DISKOTEKATE</title>
+   <style>
+       body {
+           background-color: black;
+       }
+    </style>
+
+</head>
+<body>
+    <!-- MAPA (API DE GOOGLE)-->
+    <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249743.72044632773!2d-77.12786434061049!3d-12.026603400367808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2zTGltYSwgUGVyw7o!5e0!3m2!1ses!2smx!4v1506127931970" frameborder="0" style="border:0; width: 100%;height: 400px;" allowfullscreen name="Mapa"></iframe>
+    </div>
+   @foreach (var empresa in model)
+   {
+    <div class="container">
+        <section>
+                <div class="col-xs-10" id="back-opacity">
+                    <!-- COLUMNA DE 10 GRILLAS Y CON OPACIDAD -->
+                    <div class="col-xs-3">
+                        <!-- COLUMNA DE 3 GRILLAS -->
+                        <a href=""><img src="@empresa.logo" alt="" width="250" height="200"></a> <!-- IMAGEN -->
+                        <a href=""><h1 align="center" class="titulo_tab">@empresa.nombre</h1></a> <!-- TITULO -->
+                        
+                        <div>
+                            <h3 class="texto_tab"> @empresa.descripcion</h3>
+                        </div>
+                    </div>
+                    
+                </div>     
+        </section>
+    </div>
+   }
+</body>
